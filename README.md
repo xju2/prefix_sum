@@ -1,5 +1,25 @@
 # Parallel Prefix Sum (Scan) with CUDA 
 
+## Pytorch Usage Note
+### Installation
+```
+python setup.py install
+```
+### Usage
+```
+from prefix_sum import prefix_sum_cpu, prefix_sum_cuda
+# assuming input is a torch.cuda.IntTensor, num_elements is an integer
+# allocate output_array on cuda
+# e.g. output = torch.zeros((num_elements,), dtype=torch.int, device=torch.device('cuda'))
+prefix_sum_cuda(input, num_elements, output)
+
+# similarly for the CPU version
+# except that both input and output are torch.IntTensor now
+prefix_sum_cpu(input, num_elements, output)
+```
+
+## Original README
+
 My implementation of parallel exclusive scan in CUDA, following [this NVIDIA paper](http://developer.download.nvidia.com/compute/cuda/1.1-Beta/x86_website/projects/scan/doc/scan.pdf).
 
 >Parallel prefix sum, also known as parallel Scan, is a useful building block for many
