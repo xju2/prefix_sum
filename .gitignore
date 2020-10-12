@@ -6,6 +6,10 @@
 *.user
 *.userosscache
 *.sln.docstates
+.vscode/
+build/
+*.so
+*.egg-info/
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
