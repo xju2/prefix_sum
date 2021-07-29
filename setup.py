@@ -12,6 +12,7 @@ nvcc_flags_env = os.getenv("NVCC_FLAGS", "")
 if nvcc_flags_env != "":
     nvcc_args.extend(nvcc_flags_env.split(" "))
 
+extra_compile_args = {}
 extra_compile_args["nvcc"] = nvcc_args
 
 setup(
